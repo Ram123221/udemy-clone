@@ -1,0 +1,64 @@
+@import "../../../App";
+
+#popup{
+    @include bgc($grn-ylw);
+    @include ff-2;
+    @include p(1rem 2rem);
+
+    & > div{
+        @include dis(flex);
+        justify-content: space-between;
+        @include mx-w(900px);
+        @include ml(auto);
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .first{
+        @include fs(1.3rem);
+        @include fw(bold);
+        @include pr(0.7rem);
+        border-right: 2px solid $black;
+    }
+
+    .middle{
+        @include pl(0.7rem);
+        @include fs(1.33rem);
+    }
+
+    .last{
+        @include fw(bolder);
+
+        & > *{
+            @include fs(1.5rem);
+            @include fw(bolder);
+        }
+    }
+
+    .remove{
+        @include p(1rem);
+        @include pointer;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #popup{
+        @include p(2rem 4rem);
+        
+        .first{
+            @include fs(1.6rem);
+        }
+
+        .middle{
+        }
+
+        .last{
+            @include fs(2rem);
+            text-align: center;
+
+            & > *{
+                @include fs(2rem);
+            }
+        }
+    }
+}

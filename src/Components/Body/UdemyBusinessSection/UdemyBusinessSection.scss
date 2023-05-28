@@ -1,0 +1,98 @@
+@import "../../../App";
+
+#business, #instructor-section{
+    // @include p(4.5rem 11rem);
+    @include mx-w(600px);
+    @include m-auto;
+    @include m(6.5rem 0);
+
+    & > div{
+
+        img{
+            @include h(3rem);
+            @include m(2rem 0 0);
+        }
+
+        .BI-head{
+            @include fs(2.9rem);
+            @include ff-1;
+            text-align: center;
+            @include p(2rem  2.35rem);
+        }
+
+        p{
+            @include p(0 0rem 1.5rem);
+        }
+
+        .list-container{
+            @include p(2.35rem 0rem 1.5rem);
+
+            .business-list-item{
+                
+            }
+        }
+
+        .business-btns-container{
+            @include dis(grid);
+            grid-template-columns: 50% 50%;
+            gap: 1.1rem;
+
+            button{
+                @include fw(bolder);
+                @include p(1.4rem 0);
+            }
+
+            button:first-child{
+                @include bg-black;
+            }
+
+            button:last-child{
+                @include bg-white;
+                @include bdr(1px solid);
+            }
+        }
+
+        .instructor-btns-container{
+
+            button{
+                @include fw(bolder);
+                @include p(1.4rem 1.7rem);
+                @include bg-black;
+                @include dis(block);
+                @include m-auto;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 980px) {
+    #business, #instructor-section{
+        @include dis(flex);
+        @include mx-w(90rem);
+        column-gap: 15rem;
+        @include p(unset);
+        @include m(7rem auto);
+
+        & > img{
+            @include w(20rem);
+        }
+
+        & > *{
+            flex-basis: 50% !important;
+
+            .BI-head{
+                text-align: left !important;
+                @include pl(unset !important);
+
+            }
+
+            & > img{
+                @include w(max-content);
+            }
+        }
+    }
+
+    #business{
+        flex-direction: row-reverse;
+    }
+}

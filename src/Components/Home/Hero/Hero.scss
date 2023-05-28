@@ -1,0 +1,95 @@
+@import "../../../App";
+
+#hero{
+
+    img{
+        @include h(29rem);
+        object-position: 70%;
+        object-fit: cover;
+    }
+
+    #hero-contents{
+        @include mt(-4rem);
+        @include pb(1.5rem);
+        position: relative;
+
+        & > *{
+            @include bgc($white !important);
+        }
+
+        #hero-content{
+            @include p(1.5rem 2rem);
+    
+            p:first-child{
+                @include ff-1;
+                @include fw(bold);
+                @include pb(1rem);
+                @include fs(2.2rem);
+                letter-spacing: -0.03rem;
+            }
+    
+            p:last-child{
+                @include fs(1.3rem);
+            }
+        }
+    
+        #search{
+            @include m(1.5rem 2rem 0);
+            @include bdr;
+            @include p(1.25rem);
+            @include dis(flex);
+            justify-content: space-between;
+    
+            #search-txt{
+                @include fw(medium);
+                @include c($grey-white);
+                @include ff-2;
+            }
+    
+            .icon{
+    
+                & >*{
+                    @include fs(1.5rem);
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 700px){
+    #hero{
+        position: relative;
+
+        img{
+            @include h(unset);
+        }
+
+        #hero-contents{
+            position: absolute;
+            top: 2rem;
+            left: 4rem;
+            @include pb(unset);
+            @include mt(unset);
+            @include w(27.5rem);
+            box-shadow: 0 0 0.75rem $transparent;
+
+            #hero-content{
+                @include pt(3rem);
+                @include pb(3rem);
+
+                p:first-child{
+                    @include fs(3.25rem);
+                }
+        
+                p:last-child{
+                    @include fs(1.55rem);
+                }
+            }
+
+            #search{
+                @include dis(none);
+            }
+        }
+    }
+}

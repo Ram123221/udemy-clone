@@ -1,0 +1,237 @@
+//global colors
+$black: black;
+$white: white;
+$grn-ylw: #eceb98;
+$purple: #a435f0;
+$link-blue: #5624d0;
+$grey-white: grey;
+$star-yellow: #e29619;
+$white-3: rgb(212, 212, 212);
+$white-2: rgb(237, 234, 234);
+$white-4: rgb(246, 246, 246);
+$transparent: rgba(0, 0, 0, 0.621);
+
+//mixins to be used globally
+@mixin fs($size){
+    font-size: $size;
+}
+
+@mixin bgc($color){
+    background-color: $color;
+}
+
+@mixin bdr($val:1px solid $black){
+    border: $val;
+}
+
+@mixin br($radius){
+    border-radius: $radius;
+}
+
+@mixin ttran($a){
+    text-transform: $a;
+}
+
+@mixin c($clr) {
+    color: $clr;
+}
+
+@mixin w-100(){
+    width: 100%;
+}
+
+@mixin trsit($prop){
+    transition: $prop;
+}
+
+@mixin trfrm($val){
+    transform: $val;
+}
+
+@mixin trlt-x($val){
+    transform: translateX($val);
+}
+
+@mixin p($val){
+    padding: $val;
+}
+
+@mixin m-auto{
+    margin: auto;
+}
+
+@mixin m($val){
+    margin: $val;
+}
+
+@mixin mt($val){
+    margin-top:$val;
+}
+
+@mixin mb($val){
+    margin-bottom:$val;
+}
+
+@mixin ml($val){
+    margin-left:$val;
+}
+
+@mixin mr($val){
+    margin-right:$val;
+}
+
+@mixin pt($val){
+    padding-top:$val;
+}
+
+@mixin pb($val){
+    padding-bottom:$val;
+}
+
+@mixin pl($val){
+    padding-left:$val;
+}
+
+@mixin pr($val){
+    padding-right:$val;
+}
+
+@mixin w($width){
+    width: $width;
+}
+
+@mixin mx-w($max){
+    max-width: $max;
+}
+
+@mixin h($height){
+    height: $height;
+}
+
+@mixin dis($val){
+    display: $val;
+}
+
+@mixin over($val:hidden){
+    overflow: $val;
+}
+
+@mixin fw($weight){
+    font-weight: $weight;
+}
+
+@mixin bg-black{
+    @include bgc($black);
+    @include c($white);
+}
+
+@mixin bg-white{
+    @include c($black);
+    @include bgc($white);
+}
+
+@mixin pointer{
+    cursor: pointer;
+}
+
+@mixin ff-1{
+    font-family: SuisseWorks,Georgia,Times,'Times New Roman',serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+}
+
+@mixin ff-2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+//global initial setting
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    @include fs(1.5rem);
+}
+
+html{
+    font-size: 10px;
+    @include ff-2;
+}
+
+
+img{
+    @include w(100%);
+    @include dis(inline-block);
+}
+
+//font-families
+.ff-1{
+    font-family: SuisseWorks,Georgia,Times,'Times New Roman',serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+}
+
+.ff-2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fs-lg-1{
+    @include fs(4rem);
+}
+
+.fs-lg-2{
+    @include fs(3.5rem);
+}
+
+.fs-lg-3{
+    @include fs(3rem);
+}
+
+.fs-md-1{
+    @include fs(2.5rem);
+}
+
+.fs-md-2{
+    @include fs(2.2rem);
+}
+
+.fs-md-3{
+    @include fs(2rem);
+}
+
+.fs-sm-1{
+    @include fs(1.7rem);
+}
+
+.fs-sm-2{
+    @include fs(1.5rem);
+}
+
+.fs-sm-3{
+    @include fs(1.4rem);
+}
+
+.fs-sm-4{
+    @include fs(1.3rem);
+}
+
+.fs-sm-5{
+    @include fs(1.2rem);
+}
+
+.fs-sm-6{
+    @include fs(1rem);
+}
+
+//global svg icons
+.icon > *{
+    @include fs(2.25rem);
+}
+
+.icon{
+    @include pointer();
+}
+
+.search-icon > *{
+    @include fs(1.9rem);
+}
+
+section{
+    @include p(0 2rem);
+}

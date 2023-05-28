@@ -1,0 +1,59 @@
+@import "../../../App";
+
+#top-categories{
+    
+    h1{
+        @include p(1rem 0 0);
+    }
+
+    #categories-list{
+        @include p(3rem 0);
+        @include dis(flex);
+        flex-wrap: wrap;
+        gap: 0.7rem 0.8rem;
+
+        img{
+            @include dis(none);
+        }
+        
+        h5{
+            @include bdr(1px solid $grey-white);
+            @include p(1.3rem 1rem);
+            @include br(3rem);
+            
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    #top-categories{
+    
+        #categories-list{
+            @include dis(grid);
+            grid-template-columns: repeat(3, calc(100% / 3));
+            gap: 1.5rem;
+
+            div{
+
+                img{
+                    @include dis(block);
+                }
+                
+                h5{
+                    @include bdr(none);
+                }
+            }
+    
+        }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    #top-categories{
+    
+        #categories-list{
+            grid-template-columns: repeat(4, calc(25%));
+
+        }
+    }
+}

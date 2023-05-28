@@ -1,0 +1,138 @@
+@import "../../../App";
+
+//mobile
+#navbar{
+    @include dis(flex);
+    @include p(0 2.25rem);
+    @include bdr;
+    align-items: center;
+
+    .logo-wrapper{
+        flex-basis: 100%;
+        text-align: center;
+        @include pr(1rem);
+        @include pointer;
+        
+        img{
+            @include w(7rem);
+        }
+    }
+
+    .icon{
+        @include p(1rem);
+    }
+
+    #categories, #business, #teach-on-udemy{
+        @include dis(none);
+        white-space: nowrap;
+        @include p(1rem);
+        @include pointer;
+    }
+
+    #search-bar{
+        @include bdr(none);
+        @include dis(flex);
+        @include p(1.3rem);
+        @include br(2.65rem);
+        @include m(0 1rem);
+        gap: 1.8rem;
+        align-items: center;
+
+        .icon{
+            @include p(unset);
+        }
+
+        input{
+            @include dis(none);
+            flex-basis: 100%;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.3;
+            @include bdr(none);
+        }
+    }
+
+    #login-info{
+        @include dis(none);
+        white-space: nowrap;
+        gap: 1rem;
+        @include ml(1rem);
+
+        & > *{
+            @include pointer;
+        }
+
+        .log-sign{
+            @include p(1rem 1.7rem);
+            @include fw(bold);
+            @include fs(1.4rem);
+        }
+
+        #login{
+            @include bg-white;
+        }
+
+        #signup{
+            @include bg-black;
+        }
+
+        #globe-icon{
+            @include bdr;
+            // @include p(0.7rem 0.9rem);
+            
+            & > *{
+                @include dis(block);
+                @include h(max-content);
+                @include fs(1.65rem);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #navbar{
+        @include p(1rem 2.25rem);
+
+        #bars-icon{
+            @include dis(none);
+        }
+
+        .logo-wrapper{
+            flex-basis: unset;
+        }
+
+        #categories{
+            @include dis(block);
+        }
+
+        #login-info{
+            @include dis(flex);
+        }
+
+        #search-bar{
+            @include bdr;
+            flex-basis: 100%;
+
+            input{
+                @include dis(block);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 920px){
+    #navbar{
+
+        #teach-on-udemy{
+            @include dis(block);
+        }
+    }
+}
+
+@media screen and (min-width: 1080px){
+    #navbar{
+
+        #business{
+            @include dis(block);
+        }
+    }
+}

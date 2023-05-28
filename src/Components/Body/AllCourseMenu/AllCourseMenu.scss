@@ -1,0 +1,216 @@
+@import "../../../App";
+
+section#all-course-menu{
+    padding: 2rem 2rem 5rem;
+
+    & > h1{
+        @include ff-1;
+        @include fs(2.2rem);
+    }
+
+    & > p{
+        @include fs(1.65rem);
+        letter-spacing: 0.03rem;
+        @include p(2.25rem 0 1.3rem);
+    }
+
+    .whole-courses-carousel-container{
+
+        .carousel-grand-container{
+            position: relative;
+            border-bottom: 1px solid $white-3;
+            @include w(100%);
+
+            h1.name-icon-container{
+                @include dis(flex);
+                justify-content: space-between;
+                @include p(1.4rem 0);
+                @include pointer;
+
+                span.course-name{
+                    text-transform: capitalize;
+                    @include fs(1.2rem);
+                    @include fw(bolder);
+                }
+
+                span.icon{
+                    @include trsit(all 0.3s);
+                    
+                    & > *{
+                        @include fs(1rem);
+                        stroke-width: 0.25rem;
+                    }
+                }
+
+                .rotate-180{
+                    @include trfrm(rotate(-180deg));
+                }
+            }
+
+            .arrow{
+                position: absolute;
+                // @include dis(none);
+                align-items: center;
+                justify-content: center;
+                @include w(4.5rem);
+                @include h(4.5rem);
+                @include bgc($black);
+                @include c($white);
+                @include br(50%);
+                top: 37%;
+                @include pointer;
+                z-index: 1;
+                @include bdr(1.5px solid $grey-white);
+
+                & > *{
+                    stroke-width: 0.2rem;
+                }
+            }
+
+            .left-arrow{
+                @include trfrm(translate(0%, -50%));
+            }
+
+            .right-arrow{
+                right: 0;
+                @include trfrm(translate(0%, -50%));
+            }
+
+            .carousel-container{
+                @include w(100%);
+                @include over;
+
+                .carousel{
+                    @include dis(grid);
+                    grid-template-columns: repeat(99, 100%);
+                    @include trsit(all 0.3s);
+
+                    .carousel-item{
+                        @include p(0 1.5rem);
+
+                        img{
+
+                        }
+
+                        h1.ci-head{
+                            @include fs(1.4rem);
+                            @include pt(0.5rem);
+                        }
+
+                        p.instructor-name{
+                            @include fs(1.08rem);
+                            @include pt(0.5rem);
+                            @include pb(0.5rem);
+                            @include c($grey-white);
+                        }
+
+                        .ratings-container{
+                            @include pb(0.5rem);
+
+                            & *{
+                                @include fs(1.2rem);
+                            }
+
+                            .rate-num{
+                                @include fw(bold);
+                                @include fs(1.3rem);
+                                @include c($star-yellow);
+                            }
+
+                            .stars-container{
+                                @include p(0 0.5rem);
+                                @include c($star-yellow);
+
+                                .star-icon{
+
+                                    & > *{
+
+                                    }
+                                }
+                            }
+
+                            .reviewers-quantity{
+                                @include c($grey-white);
+                            }
+                        }
+                        
+                        .price{
+                            @include fs(1.65rem);
+
+                            span{
+                                @include pr(1.5rem);
+                            }
+
+                            span:last-child{
+                                text-decoration: line-through;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    section#all-course-menu{
+        .whole-courses-carousel-container{
+            .carousel-grand-container{
+                .carousel-container{
+
+                    .carousel{
+                        grid-template-columns: repeat(99,50%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    section#all-course-menu{
+        @include pt(5rem);
+
+        .whole-courses-carousel-container{
+            .carousel-grand-container{
+                .carousel-container{
+
+                    .carousel{
+                        grid-template-columns: repeat(99,calc(100% / 3));
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 980px) {
+    section#all-course-menu{
+        .whole-courses-carousel-container{
+            .carousel-grand-container{
+                .carousel-container{
+
+                    .carousel{
+                        grid-template-columns: repeat(99,25%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    section#all-course-menu{
+        .whole-courses-carousel-container{
+            .carousel-grand-container{
+                .carousel-container{
+
+                    .carousel{
+                        grid-template-columns: repeat(99,calc(100% / 5));
+                    }
+                }
+            }
+        }
+    }
+}

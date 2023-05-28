@@ -1,0 +1,90 @@
+@import "../../../App";
+
+#featured-topics{
+    @include p(3rem 2rem);
+    @include bgc($white-4);
+
+    & > h1{
+        @include fw(bolder);
+        @include fs(2.1rem);
+    }
+
+    .topics-container{
+        @include p(2rem 0);
+        @include dis(grid);
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        row-gap: 1.55rem;
+
+
+        .featured-item-wrapper{
+
+            & > h3{
+                @include fw(bolder);
+                @include pb(1.3rem);
+            }
+
+            .featured-items{
+
+                .featured-item{
+                    @include pb(1.3rem);
+
+                    h3{
+                        @include pb(0.5rem);
+                        
+                        a{
+                            @include fw(bolder);
+                        }
+                    }
+
+                    p{
+                        @include c($grey-white);
+                    }
+                }
+            }
+        }
+    }
+
+    button.explore-more{
+        @include dis(block);
+        @include w(100%);
+        @include p(0.7rem 0);
+        @include fw(bold);
+        @include bgc(transparent);
+        @include bdr(1px solid);
+    }
+}
+
+@media screen and (min-width: 700px) {
+    #featured-topics{
+    
+        .topics-container{
+            grid-template-columns: repeat(4, 25%);
+            grid-template-rows: unset;    
+    
+            .featured-item-wrapper{
+    
+                & > h3{
+                    @include fs(1.7rem);
+                }
+    
+                .featured-items{
+    
+                    .featured-item{
+                        @include pb(1.3rem);
+    
+                        h3{
+                            @include pb(0.7rem);
+                            @include fs(1.45rem);
+                        }
+                    }
+                }
+            }
+        }
+    
+        button.explore-more{
+            @include w(max-content);
+            @include p(0.9rem 1.3rem);
+        }
+    }
+}

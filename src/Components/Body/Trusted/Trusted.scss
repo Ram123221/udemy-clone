@@ -1,0 +1,34 @@
+@import "../../../App";
+
+#trusted-by-section{
+    @include p(7.5rem 4rem);
+    text-align: center;
+
+    h1{
+        @include ff-1;
+    }
+
+    p{
+        @include p(1.5rem 0);
+    }
+
+    .logos-container{
+        @include dis(grid);
+        grid-template-columns: repeat(3, calc(100% / 3));
+        align-items: center;
+        row-gap: 2rem;
+
+        img{
+            @include h(4.25rem);
+        }
+    }
+}
+
+@media screen and (width >= 980px) {
+    #trusted-by-section{
+
+        .logos-container{
+            grid-template-columns: repeat(6, calc(100% / 6));
+        }
+    }
+}

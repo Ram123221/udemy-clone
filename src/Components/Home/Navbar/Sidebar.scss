@@ -1,0 +1,199 @@
+@import "../../../App";
+
+.translate-100-hide{
+    @include trlt-x(-100%);
+}
+
+.translate-50-show{
+    @include trlt-x(-50%);
+}
+
+.scale-0{
+    @include trfrm(scale(0));
+    @include trsit(all 0.07s linear 0s !important);
+}
+
+#sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include dis(grid);
+    @include w(100%);
+    grid-template-columns: 26.5rem auto;
+    @include bgc($transparent);
+    // @include trlt-x(-100%);
+    @include trsit(all 0s);
+    z-index: 2;
+
+    &.translate-100-hide{
+        @include trsit(all 0s 0.25s);
+    }
+
+    #sidebar-left-container{
+        position: relative;
+        // @include trlt-x(-100%);
+        @include trsit(all 0.3s ease-in-out);
+
+        #sidebar-left{
+            @include bgc($white);
+            @include ff-2;
+            // position: relative;
+            @include h(100vh);
+            @include dis(grid);
+            overflow: hidden;
+            grid-template-columns: 100% calc(100% * 2);
+    
+            & *{
+                @include fs(1.35rem);
+                letter-spacing: 0.03rem;
+                text-decoration: none;
+            }
+    
+            //global 
+            .list{
+    
+                .list-item{
+                    @include p(0.8rem 1.3rem);
+                    @include dis(flex);
+                    justify-content: space-between;
+                    @include pointer;
+    
+                    .item-name{
+    
+                    }
+                }
+            }
+    
+            .angle-arrow{
+    
+                & > *{
+                    @include fs(1rem);
+                    stroke-width: 0.07rem;
+                }
+            }
+    
+            h4{
+                @include c($grey-white);
+                @include fs(1.2rem);
+                @include p(1rem 1.3rem);
+            }
+    
+            #side-remove-icon{
+                @include p(1.25rem);
+                @include br(50%);
+                position: absolute;
+                @include bgc($white-2);
+                left: 105%;
+                top: 1.25rem;
+                height: 4.2rem;
+                @include pointer;
+                z-index: 2;
+                @include trsit(all 0.2s linear 0.3s);
+                
+                & > *{
+                    @include fs(1.65rem);
+                    @include fw(bold);
+                    stroke-width: 0.1rem;                
+                }
+    
+            }
+    
+            #main-menu.grid-left{
+                overflow: auto;
+                @include p(0.5rem 0 3.25rem);
+                @include h(100%);
+    
+                #log-sign{
+                    @include p(0.5rem 0);
+    
+                    & > *{
+                        @include dis(block);
+                        @include p(1rem 1.3rem);
+                    }
+                    
+                }
+    
+                #main-courses-container{
+                    border-top: 1px solid $white-2;
+                    border-bottom: 1px solid $white-2;
+                    @include p(0.8rem 0);
+                }
+    
+                #main-menu-bottom{
+    
+                    button{
+                        @include ml(1.3rem);
+                        @include mt(1rem);
+                        @include p(1rem 2rem);
+                        @include bg-white;
+                        @include bdr;
+                        @include dis(flex);
+                        gap: 0.5rem;
+                        align-items: center;
+    
+                        span:first-child{
+                            @include dis(block);
+                            @include h(1.7rem);
+                            
+                            & > *{
+                                @include fs(1.7rem);
+                            }
+                        }
+    
+                        span{
+                            @include fs(1.6rem);
+                        }
+                    }
+                }
+            }
+    
+            #grid-right{
+                @include h(100%);
+                // @include trlt-x(-50%);
+                @include bgc($white);
+                @include dis(grid);
+                grid-template-columns: 50% 50%;
+                @include trsit(all 0.3s ease-in-out);
+    
+                .back-to-main-menu, .back-to-all-cat{
+                    @include p(1.5rem 1.3rem);
+                    @include pointer;
+    
+                    span{
+                        @include fs(1.5rem);
+                    }
+                }
+    
+                .back-to-main-menu{
+                    @include bgc($white-2);
+                }
+    
+                .back-to-all-cat{
+                    border-bottom: 1px solid $white-2;
+                }
+    
+                .angle-arrow{
+                    @include pr(1.25rem);
+                }
+    
+                #sub-courses-menu{
+                    @include h(100%);
+                    @include bgc($white);
+                }
+    
+                #grand-sub-course-menu{
+                    @include bgc($white);
+                    @include h(100%);
+                    // @include trlt-x(-100%);
+                    @include trsit(all 0.3s ease-in-out);
+    
+                }
+            }
+        }
+
+    }
+
+    #sidebar-right{
+        // @include bgc($transparent);
+    }
+}

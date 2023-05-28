@@ -1,0 +1,75 @@
+@import "../../App";
+
+#footer{
+    @include bgc($black);
+    @include c($white);
+    @include p(3rem 2rem);
+
+    #foot-top-container{
+
+        #foot-lists-container{
+            @include p(2.5rem 0);
+
+            .foot-list{
+                list-style-type: none;
+                
+                .foot-list-item{
+                    @include pb(1.25rem);
+                    @include pointer;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    #foot-bottom-container{
+
+        img{
+           @include h(3rem);
+            @include dis(block);
+           @include w(max-content);
+        }
+    }
+}
+
+.globe-eng{
+    @include bg-black;
+    @include dis(grid);
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 0.7rem;
+    @include p(1rem 4rem 1rem 1rem);
+    @include bdr(1px solid $white);
+    @include pointer;
+
+}
+
+@media screen and (min-width: 700px) {
+    #footer{
+    
+        #foot-top-container{
+            @include dis(grid);
+            grid-template-columns: auto max-content;
+            align-items: flex-start;
+    
+            #foot-lists-container{
+                grid-column: 1/2;
+                grid-row: 1/2;
+                @include mx-w(70rem);
+                @include dis(grid);
+                grid-template-columns: repeat(3, calc(100% / 3));
+
+            }
+        }
+    
+        #foot-bottom-container{
+            @include dis(flex);
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    
+}
