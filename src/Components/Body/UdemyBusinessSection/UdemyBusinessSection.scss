@@ -4,7 +4,7 @@
     // @include p(4.5rem 11rem);
     @include mx-w(600px);
     @include m-auto;
-    @include m(6.5rem 0);
+    @include m(6.5rem auto);
 
     & > div{
 
