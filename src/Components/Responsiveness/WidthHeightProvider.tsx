@@ -14,7 +14,8 @@ function WidthHeightProvider({children}:{children: JSX.Element}) {
         setHeight(h);
     };
 
-    useEffect(()=>{
+    useEffect(() => {
+        getWidthHeight();
         window.addEventListener("load", getWidthHeight);
         window.addEventListener("resize", getWidthHeight);
 
