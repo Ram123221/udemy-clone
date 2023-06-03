@@ -214,21 +214,21 @@ export const fields_menu = {
                 {
                     loading: true
                 },
-                {
-                    loading: true
-                },
-                {
-                    loading: true
-                },
-                {
-                    loading: true
-                },
-                {
-                    loading: true
-                },
-                {
-                    loading: true
-                }
+                // {
+                //     loading: true
+                // },
+                // {
+                //     loading: true
+                // },
+                // {
+                //     loading: true
+                // },
+                // {
+                //     loading: true
+                // },
+                // {
+                //     loading: true
+                // }
             ]
         },
 

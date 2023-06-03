@@ -1,17 +1,21 @@
 import Home from './Components/Home/Home';
 import SidebarContextProvider from './Components/Home/Navbar/SidebarContextProvider';
 import Body from './Components/Body/Body';
+import WidthHeightProvider from './Components/Responsiveness/WidthHeightProvider';
 
 function App() {
 
   return (
-    <>
-      <SidebarContextProvider>
-        <Home />
-      </SidebarContextProvider>
+    <WidthHeightProvider>
+      <>
+        <SidebarContextProvider>
+          <Home />
+        </SidebarContextProvider>
 
-      <Body />
-    </>
+        <Body />
+      </>
+
+    </WidthHeightProvider>
   )
 }
 

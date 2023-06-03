@@ -13,9 +13,9 @@ function TopCategories() {
       <div id="categories-list">
 
         {categories.map((category, index)=>{
-          const {id, img_url, field} = category;
+          const { img_url, field} = category;
             return (
-              <div key={id}>
+              <div key={index}>
 
                 <img src={img_url} alt={field} />
 
